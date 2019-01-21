@@ -1,0 +1,1246 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+html {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+*:focus {
+    outline: none;
+}
+
+/*------------------------------------------------------------------------------------------
+二欄式 / 內文區靠左 / 側選單靠右
+------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------reset 此區塊請勿更動*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+pre {
+    font-size: 1em;
+}
+
+.article-content {
+    _height: 1%;
+    overflow: hidden;
+    _overflow: none;
+}
+
+.article-content p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+br {
+    letter-spacing: normal;
+}
+
+/*---------------------------------------------------------------------*/
+
+/* --------------------------------------------------------------- 大範圍區塊 ---------------------------------------------------------------*/
+
+/*--整體設定--*/
+
+body {
+    font-size: 14px;
+    background: #1c1c1c;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    font-style: normal;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-text-size-adjust: 100%;
+    -moz-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    font-smoothing: antialiased;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+#body-div:before {
+    content: "";
+    display: block;
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    filter: grayscale(1);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/*--超連結--*/
+
+a {
+    color: #999;
+    text-decoration: none;
+}
+
+/*--滑鼠移動到超連結上時--*/
+
+a:hover {
+    color: #D3AE05;
+    text-decoration: underline;
+}
+
+/*--登入後最上方的後台功能列--*/
+
+#authority {
+    background: #888;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+/*--登入後最上方的後台功能列的所有按鈕--*/
+
+#authority a {
+    background: #555;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+/*--發表新文章功能鈕--*/
+
+/*--進入後台功能鈕--*/
+
+/*--所有內容--*/
+
+#container {
+    width: 1100px;
+    margin: 10px auto 10px auto;
+}
+
+#container2 {
+    padding: 10px;
+}
+
+/*--主要內容區+側邊欄位區--*/
+
+#main {
+    position: relative;
+}
+
+/* --------------------------------------------------------------- 頁首 ---------------------------------------------------------------*/
+
+#header {
+    padding: 10px;
+    height: 600px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/*--登入功能列--*/
+
+#login-bar {
+    text-align: right;
+}
+
+/*--頁面上方區塊-不包括登入功能列--*/
+
+/*--部落格標題--*/
+
+#banner h1 a {
+    display: block;
+    width: 700px;
+    height: 60px;
+    margin: 20px auto;
+    color: #fff;
+    opacity: 0.7;
+    text-align: center;
+    font-size: 40px;
+    line-height: 55px;
+    font-weight: bold;
+    transition: 0.5s all;
+    white-space: nowrap;
+}
+
+#banner h1 a:hover {
+    color: #D3AE05;
+    text-decoration: none;
+}
+
+/*--跳到主文--*/
+
+#banner .skiplink {
+    display: none;
+}
+
+/*--部落格描述--*/
+
+#banner h2 section {
+    width: 900px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+/*--部落格全站分類--*/
+
+#blog-category {
+    position: absolute;
+    right: 0px;
+    top: 605px;
+    color: white;
+    opacity: 0.3;
+}
+
+#blog-category a {
+    color: white;
+}
+
+/*--其他服務連結區塊--*/
+
+#navigation {
+    position: absolute;
+    box-sizing: border-box;
+    width: 770px;
+    top: 630px;
+    left: 0px;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    _overflow: none;
+    _height: 1%;
+    padding: 25px 0px 25px 227px;
+}
+
+/*--其他服務連結區塊內的所有連結--*/
+
+#navigation a {
+    display: block;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    color: #333;
+    padding: 5px 0px;
+    transition: 0.5s all;
+}
+
+#navigation a:hover {
+    text-decoration: none;
+    background: #d3ae05;
+    color: white;
+}
+
+/*--其他服務連結區塊內的所有項目--*/
+
+#navigation li {
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+
+/*--其他服務連結-相簿--*/
+
+/*--其他服務連結-部落格--*/
+
+/*--其他服務連結-留言版--*/
+
+#link-guestbook {
+    display: none;
+}
+
+/*--其他服務連結-名片--*/
+
+/* --------------------------------------------------------------- 主要內容區 ---------------------------------------------------------------*/
+
+/*--主要內容區--*/
+
+#content {
+    position: relative;
+    z-index: 1;
+    width: 770px;
+    float: left;
+    background: #fff;
+    padding: 80px 0px 10px 0px;
+    border-radius: 5px;
+}
+
+/*--公告注目區--*/
+
+#spotlight {
+    box-sizing: border-box;
+    padding: 20px 60px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/*--公告注目區標題--*/
+
+#spotlight h5 {
+    color: #333;
+    font-weight: 900;
+    text-align: Center;
+    padding: 10px 0px;
+    margin-bottom: 5px;
+}
+
+/*--公告注目區內容--*/
+
+/*--所有文章區塊--*/
+
+/*--所有文章區塊標題--*/
+
+.article-area-title {
+    padding: 3px 7px;
+}
+
+/*--瀏覽方式--*/
+
+#display {
+    text-align: right;
+    margin: 5px 0px;
+}
+
+/*--瀏覽方式這四個字--*/
+
+/*--標題列表/簡短摘要--*/
+
+/*--單一篇文章--*/
+
+.article {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 30px 60px 30px 60px;
+}
+
+/*--單一篇文章最上方--*/
+
+.article-head {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/*--發表時間--*/
+
+.publish {
+    float: right;
+    padding-bottom: 20px;
+}
+
+/*--月份--*/
+
+/*--日期--*/
+
+/*--星期--*/
+
+.day {
+    display: none;
+}
+
+/*--年--*/
+
+/*--時間--*/
+
+.time {
+    display: none;
+}
+
+/*--文章標題--*/
+
+.title {
+    float: left;
+}
+
+.article-head:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.title h2 a {
+    font-size: 25px;
+    font-weight: 900;
+    display: block;
+    width: 620px;
+    color: #333;
+    line-height: 1.2em;
+    margin-left: -8px;
+}
+
+/*--文章標題前的密碼圖示/隱藏圖示/好友保護圖示--*/
+
+/*--單一篇文章中間區塊--*/
+
+.article-body {
+    margin-top: 30px;
+}
+
+/*--加入書籤--*/
+
+.bookmark {
+    text-align: right;
+}
+
+/*--文章內容--*/
+
+.article-content {
+    margin: 5px 0px;
+}
+
+/*--繼續閱讀--*/
+
+/*--發表時間--*/
+
+.author {
+    text-align: left;
+    margin: 30px 0px 0px 0px;
+    color: #cccccc;
+    padding-bottom: 5px;
+}
+
+.author a {
+    color: #ccc;
+}
+
+/*--單一篇文章最下方--*/
+
+.article-footer {
+    background: #bbb;
+    padding: 5px 10px;
+    display: none;
+}
+
+/*--此篇文章分類 : 個人分類+全站分類--*/
+
+.refer {
+    border-bottom: 1px dashed #888;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+/*--歷史上的今天--*/
+
+.history {
+    border-bottom: 1px dashed #888;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+/*--轉寄文章--*/
+
+.forward {
+    text-align: right;
+}
+
+/*--回到頁首--*/
+
+.back-to-top {
+    text-align: right;
+}
+
+/* --------------------------------------------------------------- 引用及回應列表 ---------------------------------------------------------------*/
+
+/*--引用及回應列表全部的大範圍--*/
+
+#user-post {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/*--僅引用區塊--*/
+
+#trackback-box {
+    margin-bottom: 20px;
+}
+
+/*--僅回應列表--*/
+
+/*--引用列表+回應列表--*/
+
+.user-post-box {
+    padding: 10px;
+}
+
+/*--引用列表標題--*/
+
+/*--回應列表標題--*/
+
+/*--引用列表標題+回應列表標題--*/
+
+.user-post-title {
+    background: #666;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+/*--引用內容區塊--*/
+
+/*--回應內容區塊--*/
+
+/*--引用內容區塊+回應內容區塊--*/
+
+.user-post-text {
+    padding: 20px;
+}
+
+/*--單一引用--*/
+
+/*--單一回應--*/
+
+#comment-box .single-post {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/*--單一引用+單一回應--*/
+
+.single-post {
+    position: relative;
+    min-height: 90px;
+    _height: 90px;
+    line-height: 20px;
+    background: #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 10px 10px 10px 110px;
+}
+
+.secret {
+    padding: 10px 10px 10px 10px;
+    min-height: 20px;
+}
+
+.secret .post-text {
+    margin-bottom: 0px;
+}
+
+/*--引用者資訊+回應者資訊--*/
+
+.post-info {
+    border-bottom: 1px dotted #e5e5e5;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/*--單一引用內容+單一回應內容--*/
+
+.post-text {
+    margin-bottom: 10px;
+}
+
+.floor {
+    position: absolute;
+    right: 15px;
+    color: #CAC7C7;
+}
+
+#trackback-box .post-text {
+    width: auto;
+    float: none;
+}
+
+/*--單一引用標題+單一回應標題--*/
+
+/*--回應者頭像--*/
+
+.post-photo {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: Center;
+}
+
+/*--版主回覆內容--*/
+
+.reply-text {
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    margin: 15px 0px 10px 0px;
+}
+
+/*--版主回覆資訊--*/
+
+/*--悄悄話--*/
+
+/*--留下迴響--*/
+
+.post-comment {
+    text-align: right;
+    margin: 5px 0px;
+    font-size: medium;
+}
+
+/* --------------------------------------------------------------- 列表模式的文章區塊 ---------------------------------------------------------------*/
+
+/*--列表--*/
+
+.main-list {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/*--列表表格--*/
+
+.main-list table {
+    width: 95%;
+    margin: 10px;
+}
+
+/*--列表標題--*/
+
+.main-list h3 {
+    background: #888;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+/*--列表表頭表格--*/
+
+.main-list th {
+    border: 1px solid #888;
+    padding: 2px;
+}
+
+/*--列表一般表格--*/
+
+.main-list td {
+    border: 1px solid #888;
+    padding: 2px;
+}
+
+/*--列表文章名稱--*/
+
+/*--所有文章列表--*/
+
+/*--單一分類文章列表--*/
+
+/*--所有歷史狀態列表--*/
+
+/*--頁數--*/
+
+/* --------------------------------------------------------------- 側邊欄位區 ---------------------------------------------------------------*/
+
+/*--側邊欄位區--*/
+
+#links {
+    width: 300px;
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    right: 0px;
+    background: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    z-index: 11;
+    box-sizing: border-box;
+    padding: 0 0px 0 0px;
+    box-shadow: 1px 1px 6px -2px rgba(51, 51, 102, 0.7);
+}
+
+/*--三欄式的第一欄--*/
+
+/*--三欄式的第二欄--*/
+
+/*--單一功能區塊--*/
+
+.box {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/*--單一功能區塊標題'--*/
+
+.box-title {
+    text-align: center;
+    padding: 4px;
+    font-size: medium;
+    margin-bottom: 10px;
+    color: #D3AE05;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(211, 174, 5, 0.25);
+}
+
+/*--單一功能區塊內容--*/
+
+.box-text {
+    box-sizing: border-box;
+    padding: 0px 15px;
+}
+
+/*--單一功能區塊項目--*/
+
+.box-text li {
+    margin: 5px 0px;
+}
+
+/*--單一功能區塊超連結--*/
+
+/*--誰來我家--*/
+
+/*--誰來我家標頭--*/
+
+/*--誰來我家內容區塊--*/
+
+/*--單一頭像列表--*/
+
+#visitor ul {
+    _height: 1%;
+    overflow: hidden;
+    _overflow: none;
+}
+
+/*--單一頭像--*/
+
+#visitor li {
+    float: left;
+}
+
+/*--所有訪客列表--*/
+
+/*--我去誰家--*/
+
+/*--我去誰家標頭--*/
+
+/*--我去誰家內容區塊--*/
+
+/*--單一頭像列表--*/
+
+#crumb ul {
+    _height: 1%;
+    overflow: hidden;
+    _overflow: none;
+}
+
+/*--單一頭像--*/
+
+#crumb li {
+    float: left;
+}
+
+/*--所有瀏覽列表--*/
+
+/*--站方公告--*/
+
+/*--站方公告標頭--*/
+
+/*--站方公告內容區塊--*/
+
+/*--一條站方公告--*/
+
+/*--碎碎唸--*/
+
+/*--碎碎唸標頭--*/
+
+/*--碎碎唸內容區塊--*/
+
+/*--發表時間--*/
+
+/*碎碎唸文字內容*/
+
+/*--好友的碎碎唸聯播--*/
+
+/*--好友的碎碎唸標頭--*/
+
+/*--好友的碎碎唸內容區塊--*/
+
+/*--一個好友的內容--*/
+
+#broadcast .box-text ul {
+    border-bottom: 1px dashed #777;
+    _height: 1%;
+    overflow: hidden;
+    _overflow: none;
+}
+
+/*--好友的頭像--*/
+
+.broadcast-photo {
+    float: left;
+    width: 40px;
+}
+
+/*--好友的碎碎唸發表時間--*/
+
+/*--好友的碎碎唸發表內容--*/
+
+/*--個人頭像--*/
+
+/*--個人頭像標頭--*/
+
+/*--個人頭像內容區塊--*/
+
+/*--個人頭像那張照片--*/
+
+/*--搜尋--*/
+
+/*--搜尋標頭--*/
+
+/*--搜尋內容區塊--*/
+
+/*--搜尋輸入文字欄位--*/
+
+/*--搜尋確定鈕--*/
+
+/*--本日人氣--*/
+
+/*--本日人氣標頭--*/
+
+/*--本日人氣內容區塊--*/
+
+/*--人氣數字--*/
+
+/*--更換樣式--*/
+
+/*--更換樣式標頭--*/
+
+/*--更換樣式內容區塊--*/
+
+/*--更換樣式選單--*/
+
+/*--新聞交換rss--*/
+
+/*--新聞交換標頭--*/
+
+/*--新聞交換內容區塊--*/
+
+/*--新聞交換icon--*/
+
+/*--月曆--*/
+
+/*--月曆標頭--*/
+
+/*--月曆內容區塊--*/
+
+/*--月曆-月曆表格--*/
+
+/*--月曆-選擇月份的那一欄--*/
+
+/*--月曆-星期幾的那一欄--*/
+
+/*--月曆-日期儲存格--*/
+
+/*--月曆-當天有寫文章的儲存格--*/
+
+/*--近期文章--*/
+
+/*--近期文章標頭--*/
+
+/*--近期文章內容區塊--*/
+
+/*--近期文章文章標題--*/
+
+/*--人氣文章--*/
+
+/*--人氣文章標頭--*/
+
+/*--人氣文章內容區塊--*/
+
+/*--人氣文章文章標題--*/
+
+/*--文章分類--*/
+
+/*--文章分類標頭--*/
+
+/*--文章分類內容區塊--*/
+
+/*--文章分類的分類目錄--*/
+
+/*--文章分類的文章分類名稱--*/
+
+/*--文章彙整--*/
+
+/*--文章彙整標頭--*/
+
+/*--文章彙整內容區塊--*/
+
+/*--文章彙整月份選單--*/
+
+/*--所有文章列表--*/
+
+/*--最新迴響--*/
+
+/*--最新迴響標頭--*/
+
+/*--最新迴響內容區塊--*/
+
+/*--最新迴響-迴響日期--*/
+
+/*--最新迴響-迴響摘要--*/
+
+/*--最新引用--*/
+
+/*--最新引用標頭--*/
+
+/*--最新引用內容區塊--*/
+
+/*--最新引用-引用過去的文章標題--*/
+
+/*--最新引用-引用過去的部落格主標--*/
+
+/*--最新訂閱--*/
+
+/*--最新訂閱標頭--*/
+
+/*--最新訂閱內容區塊--*/
+
+/*--最新訂閱-訂閱對方的新文章標題--*/
+
+/*--最新訂閱-訂閱對方的部落格主標--*/
+
+/*--我的蒐藏--*/
+
+/*--我的蒐藏標頭--*/
+
+/*--我的蒐藏內容區塊--*/
+
+/*--我的蒐藏選單--*/
+
+/*--我的連結--*/
+
+/*--我的連結標頭--*/
+
+/*--我的連結內容區塊--*/
+
+/*--我的連結-單一分類--*/
+
+/*--我的連結-單一分類標題--*/
+
+/*--我的連結-單一連結--*/
+
+/*--所有自訂欄位--*/
+
+/*--所有自訂欄位標頭--*/
+
+/*--所有自訂欄位內容區塊--*/
+
+/*--powered--*/
+
+/*--powered標頭--*/
+
+/*--powered內容區塊--*/
+
+/*--頁尾--*/
+
+#footer {
+    clear: both;
+    width: 750px;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+}
+
+/*--頁尾-自訂聲明--*/
+
+/*--頁尾-pixnet連結--*/
+
+/*-----------------------------------BlueHorace-----------------------------------*/
+
+#hot-article {
+    position: absolute;
+    left: -771px;
+    top: -265px;
+    width: 688px;
+}
+
+#hot-article a {
+    color: white;
+}
+
+#hot-article .box-title {
+    margin-left: -20px;
+    text-indent: -9999em;
+    padding: 0;
+    height: 19px;
+    border-bottom: none;
+    background: url(https://pic.pimg.tw/pixnetvisual/1454253320-3857094440.png?v=1454253324);
+}
+
+#hot-article .box-text li {
+    line-height: 30px;
+    list-style-type: decimal;
+    list-style-type: none\9;
+    color: white;
+    background: url(https://pic.pimg.tw/pixnetvisual/1454253320-1564185730.png?v=1454253324) center bottom repeat-x;
+    white-space: nowrap;
+}
+
+#user-info {
+    position: absolute;
+    right: -11px;
+    top: -265px;
+    width: 364px;
+}
+
+#user-info a {
+    color: white;
+}
+
+#user-info .box-title {
+    text-indent: -9999em;
+    padding: 0;
+    height: 19px;
+    border-bottom: none;
+    background: url(https://pic.pimg.tw/pixnetvisual/1452482516-3793352653.png?v=1452482536);
+}
+
+#user-info {
+    color: white;
+}
+
+#user-info .user-img img {
+    margin-top: 7px;
+    margin-left: -13px;
+    margin-bottom: 10px;
+}
+
+#user-info dl {
+    width: 255px;
+    top: 42px;
+    left: 115px;
+    position: absolute;
+}
+
+#user-info dl dt {
+    color: #e5bc04;
+    opacity: .6;
+    padding-right: 2px;
+    font-weight: bold;
+    margin: 0 5px 0 0 \9;
+    margin: 0;
+    float: left;
+}
+
+.user-img img {
+    -webkit-filter: sepia(100%) contrast(120%);
+}
+
+#user-info .user-action {
+    float: none !important;
+    width: 100px;
+    margin-left: -13px;
+}
+
+#user-info .user-action input {
+    width: 90px;
+    height: 24px;
+    left: 0px;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #dedede;
+}
+
+#calendar table {
+    width: 278px;
+}
+
+#calendar .current-month {
+    text-align: center;
+}
+
+#calendar .month-nav {
+    height: 40px;
+}
+
+.friendlist li {
+    float: left;
+}
+
+.friendlist li .friends-all {
+    clear: both;
+}
+
+.page {
+    padding: 0 0 10px 0;
+    text-align: center;
+    font-size: 13px;
+    display: table;
+    margin: 0 auto;
+}
+
+.page a, .page span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    line-height: 12px;
+    padding: 10px 10px;
+    float: left;
+    margin: 0 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.page .next, .page .pre {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 6px;
+}
+
+.page span {
+    color: #D3AE05;
+    border-bottom: 4px solid #D3AE05;
+}
+
+#hotArtUl span {
+    display: none;
+}
+
+/*-------------------更換部落格背景圖，更改圖片網址即可----------------*/
+
+#body-div:before {
+    background: url(https://pic.pimg.tw/pixnetvisual/1452482516-1810876394.jpg?v=1452482536) center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/*-------------------傑迪森客製化----------------*/
+
+.title h2 a:hover {
+    text-decoration: none;
+}
+
+    /*---聯絡方式連結ICON----*/
+
+#banner h2 div {
+    width: 900px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+#banner h2 div a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+#facebook {
+    background-color: #428bca;
+    color: #fff;
+    opacity: 0.7;
+}
+
+#facebook:hover {
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    /* Safari */
+    transition: opacity 1s;
+}
+
+#linkedin {
+    background-color: rgb(0, 119, 181);
+    color: #fff;
+    opacity: 0.7;
+}
+
+#linkedin:hover {
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    /* Safari */
+    transition: opacity 1s;
+}
+
+#youtube {
+    background-color: rgb(211, 28, 31);
+    color: #fff;
+    opacity: 0.7;
+}
+
+#youtube:hover {
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    /* Safari */
+    transition: opacity 1s;
+}
